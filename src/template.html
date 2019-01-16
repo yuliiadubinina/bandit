@@ -7,15 +7,12 @@
   <title>
     {% block title %}{% endblock %}
   </title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-  {% include 'components/Layout/Header/header.html' %}
-
   <div class="content">
     {% block content %}{% endblock %}
   </div>
-
-  {% include 'components/Layout/Footer/footer.html' %}
+  <script src="index.js"></script>
 </body>
 </html>
