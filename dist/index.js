@@ -20,7 +20,7 @@ const items = [
   { img: "img/jackpot.png", value: 300}
 ];
 
-btnStart.onclick = () => {
+btnStart.addEventListener("click", ()=> {
   startMp3.play();
 
   setImage(imgFirst, 0);
@@ -34,7 +34,7 @@ btnStart.onclick = () => {
   setImage(imgThird, 0);
   setImage(imgThird, 1000);
   setImage(imgThird, 2000);
-  
+
   const firstRange = getRandomInRange(0, 9);
   const secondRange = getRandomInRange(0, 9);
   const thirdRange = getRandomInRange(0, 9);
@@ -68,16 +68,15 @@ btnStart.onclick = () => {
   } else {
     total.innerHTML = +total.innerHTML - 50;
   }
-}
+});
 
 function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function setImg(img, v) {
-  for (let i = 0; i < v; i++) {
-    const url = items[i].img;
-    img.setAttribute("src", url);
+function setImg(img, value) {
+  for (let i = 0; i < value; i++) {
+    img.setAttribute("src", items[i].img);
   }
 }
 
@@ -87,6 +86,5 @@ function setImage(img, int) {
     setTimeout(() => {
       setImg(img, i);
     }, time);
-    console.log(time);
   }
 }
