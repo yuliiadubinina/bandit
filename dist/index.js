@@ -24,18 +24,17 @@ btnStart.addEventListener("click", ()=> {
   startMp3.play();
   lastWin.innerHTML = "0";
 
+  changeImages(imgFirst, 0);
+  changeImages(imgFirst, 1000);
+  changeImages(imgFirst, 2000);
 
-  setImage(imgFirst, 0);
-  setImage(imgFirst, 1000);
-  setImage(imgFirst, 2000);
+  changeImages(imgSecond, 100);
+  changeImages(imgSecond, 1100);
+  changeImages(imgSecond, 2100);
 
-  setImage(imgSecond, 0);
-  setImage(imgSecond, 1000);
-  setImage(imgSecond, 2000);
-
-  setImage(imgThird, 0);
-  setImage(imgThird, 1000);
-  setImage(imgThird, 2000);
+  changeImages(imgThird, 200);
+  changeImages(imgThird, 1200);
+  changeImages(imgThird, 2200);
 
   const firstRange = getRandomInRange(0, 9);
   const secondRange = getRandomInRange(0, 9);
@@ -80,17 +79,17 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function setImg(img, value) {
+function setImage(img, value) {
   for (let i = 0; i < value; i++) {
     img.setAttribute("src", items[i].img);
   }
 }
 
-function setImage(img, int) {
+function changeImages(img, int) {
   for (let i = 1; i <= 10; i++) {
     let time = +(i + "00") + int;
     setTimeout(() => {
-      setImg(img, i);
+     setImage(img, i);
     }, time);
   }
 }
