@@ -22,6 +22,8 @@ const items = [
 
 btnStart.addEventListener("click", ()=> {
   startMp3.play();
+  lastWin.innerHTML = "0";
+
 
   setImage(imgFirst, 0);
   setImage(imgFirst, 1000);
@@ -58,8 +60,12 @@ btnStart.addEventListener("click", ()=> {
     lastWin.innerHTML = win;
   } else if (items[firstRange].value === items[secondRange].value || items[firstRange].value === items[thirdRange].value) {
     const win = items[firstRange].value;
-    total.innerHTML = +total.innerHTML + win;
-    lastWin.innerHTML = win;
+
+    setTimeout(() => {
+      total.innerHTML = +total.innerHTML + win;
+      lastWin.innerHTML = win;
+      // alert("You win: $" + win)
+    }, 4100)
   } else if (items[secondRange].value == items[thirdRange].value) {
     const win = items[secondRange].value;
     total.innerHTML = +total.innerHTML + win;
