@@ -21,8 +21,9 @@ const items = [
 ];
 
 btnStart.addEventListener("click", ()=> {
-  startMp3.play();
+  btnStart.setAttribute("disabled", true);
   lastWin.innerHTML = "0";
+  startMp3.play();
 
   changeImages(imgFirst, 0);
   changeImages(imgFirst, 1000);
@@ -64,7 +65,7 @@ btnStart.addEventListener("click", ()=> {
       total.innerHTML = +total.innerHTML + win;
       lastWin.innerHTML = win;
       // alert("You win: $" + win)
-    }, 4100)
+    }, 4200)
   } else if (items[secondRange].value == items[thirdRange].value) {
     const win = items[secondRange].value;
     total.innerHTML = +total.innerHTML + win;
@@ -73,6 +74,10 @@ btnStart.addEventListener("click", ()=> {
   } else {
     total.innerHTML = +total.innerHTML - 50;
   }
+
+  setTimeout(() => {
+    btnStart.removeAttribute("disabled");
+  }, 4300)
 });
 
 function getRandomInRange(min, max) {
