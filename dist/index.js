@@ -20,6 +20,8 @@ const items = [
   { img: "img/jackpot.png", value: 300 }
 ];
 
+changeImages(imgFirst, 0);
+
 btnStart.addEventListener("click", () => {
   btnStart.setAttribute("disabled", true);
   lastWin.innerHTML = "0";
@@ -64,7 +66,6 @@ btnStart.addEventListener("click", () => {
     setTimeout(() => {
       total.innerHTML = +total.innerHTML + win;
       lastWin.innerHTML = win;
-      // alert("You win: $" + win)
     }, 4200)
   } else if (items[secondRange].value == items[thirdRange].value) {
     const win = items[secondRange].value;

@@ -2,9 +2,14 @@
   margin: 20px auto;
   width: 400px;
   height: 450px;
+  border: 2px solid rgb(255, 255, 255);
+
   background: rgba(255, 255, 255, 0.884);
-  border: 1px solid #fff;
+  // border: 2px solid #fff;
   position: relative;
+
+  // box-shadow: 0px 5px 15px 5px rgb(255, 255, 255);
+
 }
 
 .slots {
@@ -15,6 +20,7 @@
   top: 60px;
   left: 0;
   overflow: hidden;
+  background: #fff;
 }
 
 .imgContainer {
@@ -24,9 +30,6 @@
 
 .slot {
   width: 30%;
-  background: #fff;
-  border: 1px solid #fff;
-  // margin: 5px;
   overflow: hidden;
 }
 
@@ -42,16 +45,18 @@
   bottom: 100px;
   position: absolute;
   width: 100%;
+  &__title {
+    font-size: 18px;
+  }
 }
 
 .score__item {
-  font-size: 20px;
+  font-size: 22px;
   width: 25%;
   margin: 5px;
   padding: 10px 25px;
-  background: #fff;
-  border: 1px solid #fff;
   text-align: center;
+  background: #fff;
 }
 
 .controls {
