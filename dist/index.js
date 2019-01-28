@@ -7,20 +7,20 @@ const lastWin = document.querySelector(".win");
 
 const startMp3 = document.querySelector(".play");
 
-const items = [ 
-  { img: "img/plum.png", value: 10},
-  { img: "img/bananas.png", value: 20},
-  { img: "img/pear.png", value: 30},
-  { img: "img/watermelon.png", value: 40},
-  { img: "img/cherries.png", value: 50},
-  { img: "img/strawberry.png", value: 60},
-  { img: "img/clover.png", value: 70},
-  { img: "img/seven.png", value: 100},
-  { img: "img/bw.png", value: 200},
-  { img: "img/jackpot.png", value: 300}
+const items = [
+  { img: "img/plum.png", value: 10 },
+  { img: "img/bananas.png", value: 20 },
+  { img: "img/pear.png", value: 30 },
+  { img: "img/watermelon.png", value: 40 },
+  { img: "img/cherries.png", value: 50 },
+  { img: "img/strawberry.png", value: 60 },
+  { img: "img/clover.png", value: 70 },
+  { img: "img/seven.png", value: 100 },
+  { img: "img/bw.png", value: 200 },
+  { img: "img/jackpot.png", value: 300 }
 ];
 
-btnStart.addEventListener("click", ()=> {
+btnStart.addEventListener("click", () => {
   btnStart.setAttribute("disabled", true);
   lastWin.innerHTML = "0";
   startMp3.play();
@@ -40,7 +40,7 @@ btnStart.addEventListener("click", ()=> {
   const firstRange = getRandomInRange(0, 9);
   const secondRange = getRandomInRange(0, 9);
   const thirdRange = getRandomInRange(0, 9);
-  
+
   setTimeout(() => {
     imgFirst.setAttribute("src", items[firstRange].img)
   }, 3200);
@@ -94,7 +94,7 @@ function changeImages(img, int) {
   for (let i = 1; i <= 10; i++) {
     let time = +(i + "00") + int;
     setTimeout(() => {
-     setImage(img, i);
+      setImage(img, i);
     }, time);
   }
 }

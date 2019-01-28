@@ -1,0 +1,29 @@
+#p_prldr {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom:0;
+    background: #fff;
+    z-index: 30;
+}
+     
+.contpre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 300px;
+    height: 100vh;
+    color: $primary;
+    font-size: 40px;
+}
+
+.img-preload {
+    padding: 10px;
+}
+
+.svg_anm2 {
+    font-size: 30px;
+    display: inline-block;
+}

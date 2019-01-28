@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,25 @@
   <title>
     {% block title %}{% endblock %}
   </title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+  <script type="text/javascript">$(window).on('load', function () {
+      var $preloader = $('#p_prldr'),
+        $svg_anm = $preloader.find('.svg_anm');
+      $svg_anm2 = $preloader.find('.svg_anm2');
+      $svg_anm.fadeOut(2000);
+      $svg_anm2.fadeOut(3000);
+      $preloader.delay(2000).fadeOut('slow');
+    });</script>
+
   <link rel="stylesheet" href="css/main.min.css">
 </head>
+
 <body>
   <div class="content">
     {% block content %}{% endblock %}
   </div>
   <script src="index.js"></script>
 </body>
+
 </html>
