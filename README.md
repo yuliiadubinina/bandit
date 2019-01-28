@@ -1,22 +1,3 @@
-# Simple Boilerplate-starter
+# fruit-cocktail
 
-## Installation
-
-### Requirements
-
-- Node.js
-- Gulp
-
-`$ npm i`
-
-## Usage
-
-```
-npm run serve
-```
-
-## Compress images
-
-```
-npm run img
-```
+The project is published at https://yuliiadubinina.github.io/fruit-cocktail/dist
