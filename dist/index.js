@@ -1,4 +1,9 @@
 const btnStart = document.querySelector('.start');
+const btnDouble = document.querySelector('.double');
+
+let bet = document.querySelector(".score__value").innerHTML;
+let index = 1;
+
 const imgFirst = document.querySelector('.imgFirst');
 const imgSecond = document.querySelector('.imgSecond');
 const imgThird = document.querySelector('.imgThird');
@@ -21,6 +26,15 @@ const items = [
 ];
 
 changeImages(imgFirst, 0);
+
+btnDouble.addEventListener("click", () => {
+  bet = +bet + 50;
+  index = index + 1;
+  console.log(index);
+  document.querySelector(".score__value").innerHTML = bet;
+
+  console.log(bet);
+})
 
 btnStart.addEventListener("click", () => {
   btnStart.setAttribute("disabled", true);
@@ -56,30 +70,41 @@ btnStart.addEventListener("click", () => {
   }, 4000)
 
   if (items[firstRange].value == items[secondRange].value && items[secondRange].value == items[thirdRange].value) {
-    const win = items[firstRange].value * 3;
+    const win = (items[firstRange].value * 3) * index;
     const newTotal = +total.innerHTML + win;
     total.innerHTML = newTotal;
     lastWin.innerHTML = win;
   } else if (items[firstRange].value === items[secondRange].value || items[firstRange].value === items[thirdRange].value) {
-    const win = items[firstRange].value;
+    const win = items[firstRange].value * index;
 
     setTimeout(() => {
       total.innerHTML = +total.innerHTML + win;
       lastWin.innerHTML = win;
     }, 4200)
   } else if (items[secondRange].value == items[thirdRange].value) {
-    const win = items[secondRange].value;
+    const win = items[secondRange].value * index;
     total.innerHTML = +total.innerHTML + win;
 
     lastWin.innerHTML = win;
   } else {
-    total.innerHTML = +total.innerHTML - 50;
+    total.innerHTML = +total.innerHTML - bet;
   }
 
   setTimeout(() => {
     btnStart.removeAttribute("disabled");
   }, 4300)
+
+  console.log(total.innerHTML);
+
+  if (+total.innerHTML < 0) {
+    total.innerHTML = "0";
+    alert("Congratulations! You loser ☺")
+    location.reload()
+
+  }
+
 });
+
 
 function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;

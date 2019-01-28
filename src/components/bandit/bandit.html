@@ -1,4 +1,39 @@
 <div class="container container--bandit">
+
+  {% set items =
+  [
+  { img: "img/plum.png", value: 10 },
+  { img: "img/bananas.png", value: 20 },
+  { img: "img/pear.png", value: 30 },
+  { img: "img/watermelon.png", value: 40 },
+  { img: "img/cherries.png", value: 50 },
+  { img: "img/strawberry.png", value: 60 },
+  { img: "img/clover.png", value: 70 },
+  { img: "img/seven.png", value: 100 },
+  { img: "img/bw.png", value: 200 },
+  { img: "img/jackpot.png", value: 300 }
+  ]
+  %}
+
+  <div class="rules">
+    <div class="overlay"></div>
+
+    <div class="rules__text">
+      {% for item in items %}
+      <div class="rules__item">
+        <img class="rules__img" src="{{ item.img }}" alt="{{ item.img }}">
+        <img class="rules__img" src="{{ item.img }}" alt="{{ item.img }}">
+        <img class="rules__img" src="{{ item.img }}" alt="{{ item.img }}">
+
+        <span class="rules__value">${{ item.value }} * 3</span>
+      </div>
+      {% endfor %}
+
+    </div>
+    <a href="#" class="btn-rules btn-red">Click me!</a>
+  </div>
+
+
   <div class="bandit">
 
     <div class="slots">
@@ -23,7 +58,7 @@
 
       <div class="score__item bet">
         <span class="score__title">Bet:</span>
-        <span>50</span>
+        <span class="score__value">50</span>
       </div>
 
       <div class="score__item">
@@ -35,6 +70,9 @@
     <div class="controls">
       <button class="btn-red start">
         Start
+      </button>
+      <button class="btn-red double">
+        Bet +50
       </button>
     </div>
 
