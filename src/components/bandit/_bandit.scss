@@ -131,11 +131,11 @@ transform: translate(-50%, 0);
   left: 0;
 }
 
-.rules:active .rules__text {
+.rules:hover .rules__text {
   display: flex;
 }
 
-.rules:active .overlay {
+.rules:hover .overlay {
   display: block;
 }
 
