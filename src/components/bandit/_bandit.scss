@@ -63,9 +63,12 @@
   font-size: 25px;
   width: 25%;
   margin: 5px;
-  padding: 10px 26px;
+  padding: 10px 14px;
   text-align: center;
   background: #fff;
+  @include small {
+    padding: 10px 26px;
+  }
 }
 
 .controls {
